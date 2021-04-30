@@ -8,7 +8,7 @@ export class PriceController {
   constructor(private readonly priceService: PriceService) {}
 
   @Get()
-  async getPrice(@Query() priceDTO: PriceDto): Promise<string> {
+  async getPrice(@Query() priceDTO: PriceDto): Promise<PriceResponce> {
     return await this.priceService.getPrice(priceDTO);
   }
 }
