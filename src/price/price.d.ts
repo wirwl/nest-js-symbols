@@ -1,3 +1,3 @@
 type PriceResponce = {
-  [key: string]: number | string;
+  [key: string]: number | string | string[];
 };

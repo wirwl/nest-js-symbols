@@ -24,15 +24,14 @@ export class PriceService {
 
     const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-    if (exchange.has.fetchOHLCV)
+    if (exchange.has.fetchOHLCV) {
+      await exchange.loadMarkets();
       for (const symbol of symbols) {
-        await exchange.loadMarkets();
-
         if (exchange.symbols.includes(symbol)) {
           result[symbol] = {};
 
           for (const date of dates) {
-            await sleep(exchange.rateLimit); // milliseconds
+            await sleep(exchange.rateLimit);
             const fData = await exchange.fetchOHLCV(
               symbol,
               exchange.timeframes['1d'],
@@ -46,6 +45,7 @@ export class PriceService {
           }
         }
       }
+    }
 
     return result;
   }

@@ -2,7 +2,7 @@
   "name": "lds84",
   "version": "0.0.1",
   "description": "",
-  "author": "",
+  "author": "Dmitry Levchenko",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
@@ -24,7 +24,7 @@
     "@nestjs/common": "^7.6.15",
     "@nestjs/core": "^7.6.15",
     "@nestjs/platform-express": "^7.6.15",
-    "ccxt": "^1.49.17",
+    "ccxt": "^1.49.21",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.6.6"
