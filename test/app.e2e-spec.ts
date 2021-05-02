@@ -17,17 +17,10 @@ describe('AppController (e2e)', () => {
   });
 
   it('/ (GET)', () => {
-    const url=`/price?exchange=binance&symbols=BTC/USDT,ETH/USDT&dates=2021-04-28,2021-04-29,2021-04-30`;
+    const url=`/price?exchange=binance&symbols=BTC/USDT,ETH/USDT,USDT/RUB&dates=2021-04-27,2021-04-28,2021-04-29,2021-04-30,2021-04-01,2021-04-02`;
     return request(app.getHttpServer())
       .get('/')
       .expect(200)
       .expect(`<p>For test /price follow this link: <a href=${url}>${url}</a></p>`);
-  });
-
-  it('/price (GET)', () => {
-    return request(app.getHttpServer())
-      .get('/price?exchange=bitmex&symbols=BTC/USD,ETH/USD&dates=2021-04-28')
-      .expect(200)
-      .expect(JSON.parse(`{"BTC/USD":{"1619568000000":55050.5},"ETH/USD":{"1619568000000":2674}}`));
   });
 });

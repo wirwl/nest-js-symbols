@@ -1,9 +1,10 @@
-body {
-    /* background: black; */
+.charts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
-.charts {
-      display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.caption {
+  font-size: 18px;
+  font-weight: bold;
 }

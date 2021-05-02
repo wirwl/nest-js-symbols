@@ -15,7 +15,7 @@ const options = {
         },
         title: {
             display: true,
-            text: 'График изменения цен'
+            text: 'График изменения цены'
         }
     }
 };
@@ -31,11 +31,10 @@ for (const symbol in symbols) {
     dataset.tension = 0.4;
 
     for (const date in symbols[symbol]) {
-        console.log(date);
         const o = { year: "numeric", month: "long", day: "2-digit" };
         const prettifyDate = new Intl.DateTimeFormat("ru-RU", o)
-        .format(new Date(parseInt(date)))
-        .toString();
+            .format(new Date(parseInt(date)))
+            .toString();
         labels.push(prettifyDate);
         dataset.data.push({ x: prettifyDate, y: symbols[symbol][date] });
     }
@@ -48,5 +47,6 @@ for (const symbol in symbols) {
         },
         options: options
     });
-
 }
+
+jsonTree.create(symbols, document.querySelector('.json')).expand();

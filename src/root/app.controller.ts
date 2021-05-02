@@ -5,11 +5,11 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) { }
 
-  @Get()
-  @Render('index')
-  root() {
-    return { message: 'Hello world!1111' };
-  }
+  // @Get()
+  // @Render('index')
+  // root() {
+  //   return { message: 'Hello world!1111' };
+  // }
 
   @Get()
   getHello(): string {

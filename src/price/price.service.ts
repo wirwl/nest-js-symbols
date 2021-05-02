@@ -37,7 +37,7 @@ export class PriceService {
             await sleep(exchange.rateLimit);
             const fData = await exchange.fetchOHLCV(
               symbol,
-              exchange.timeframes['1d'],
+              '1d',
               exchange.parse8601(`${date}T00:00:00Z`),
               1,
             );
