@@ -66,14 +66,15 @@ describe('PriceService', () => {
         toStrictEqual(res);
     });
 
-    // it('Check if bybit exchange is present', async () => {
-    //   const res: PriceResponce = JSON.parse(``);
-    //   expect(await service.getPrice({ 
-    //     exchange: 'bybit', 
-    //     symbols: 'BTC/USD,ETH/USD', 
-    //     dates: '2021-04-28,2021-04-29,2021-04-30' })).
-    //     toStrictEqual(res);
-    // });
+    it('Check if bybit exchange is present', async () => {
+      const res: PriceResponce = JSON.parse(`{"BTC/USDT":{"1619568000000":54993.5,"1619654400000":54827,"1619740800000":53508},"ETH/USDT":{"1619568000000":2667.95,"1619654400000":2748,"1619740800000":2758.85}}`);
+      expect(await service.getPrice({
+        exchange: 'bybit',
+        symbols: 'BTC/USDT,ETH/USDT',
+        dates: '2021-04-28,2021-04-29,2021-04-30'
+      })).
+        toStrictEqual(res);
+    });
 
     it('Check if wrong exchange name is present', async () => {
       expect(await service.getPrice({
