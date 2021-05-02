@@ -14,9 +14,12 @@ export const ERRORS = {
 
 @Injectable()
 export class PriceService {
+  // Метод для проверки входит ли имя биржи в список допустимых
   isValidExchange = (exchange: string): boolean => validExchanges.includes(exchange);
 
+  // Метод для получения данных с биржи
   async getPrice(price: PriceDto): Promise<PriceResponce> {
+    // Если неправильное имя биржи, возвращаем ошибку
     if (!this.isValidExchange(price.exchange))
       return ERRORS.invalidExchange;
 
@@ -29,10 +32,13 @@ export class PriceService {
 
     if (exchange.has.fetchOHLCV) {
       await exchange.loadMarkets();
+      // Проходим по списку валютных пар
       for (const symbol of symbols) {
+        // Проверяем есть ли валютная пара на бирже
         if (exchange.symbols.includes(symbol)) {
           result[symbol] = {};
 
+          // Проходим по указанным датам
           for (const date of dates) {
             await sleep(exchange.rateLimit);
             const fData = await exchange.fetchOHLCV(

@@ -1,6 +1,7 @@
 const charts = document.querySelector('.charts');
 const symbols = JSON.parse(charts.dataset.symbols);
 
+// Функция добавления канваса для графика
 const addCanvas = (root, id) => {
     root.insertAdjacentHTML('beforeend', `<canvas id="${id}" width="400" height="400"></canvas>`);
     const chart = document.getElementById(id);
@@ -20,6 +21,7 @@ const options = {
     }
 };
 
+// Если имя биржи правильное строим графики
 if (!symbols['error'])
     for (const symbol in symbols) {
         const ctx = addCanvas(charts, `chart_${symbol}`.replace('/', '_'));
@@ -40,6 +42,7 @@ if (!symbols['error'])
             dataset.data.push({ x: prettifyDate, y: symbols[symbol][date] });
         }
 
+        // Добавляем новый график
         new Chart(ctx, {
             type: 'line',
             data: {
