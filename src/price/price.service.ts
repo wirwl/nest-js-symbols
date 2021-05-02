@@ -7,7 +7,7 @@ const validExchanges = ['binance', 'bitmex', 'bybit'];
 
 export const ERRORS = {
   invalidExchange: {
-    error: `Неправильное имя биржи, допустимые значения: 'binance', 'bitmex', 'bybit'`,
+    error: "Неправильное имя биржи, допустимые значения: binance, bitmex, bybit",
   }
 };
 
