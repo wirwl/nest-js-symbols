@@ -26,7 +26,7 @@ for (const symbol in symbols) {
     const dataset = {};
     dataset.label = symbol;
     dataset.data = [];
-    dataset.fill = false;
+    dataset.fill = true;
     dataset.borderColor = 'rgb(75, 192, 192)';
     dataset.tension = 0.4;
 
