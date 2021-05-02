@@ -1,5 +1,4 @@
 const charts = document.querySelector('.charts');
-console.log(charts.dataset.symbols);
 const symbols = JSON.parse(charts.dataset.symbols);
 
 const addCanvas = (root, id) => {
@@ -50,7 +49,5 @@ if (!symbols['error'])
             options: options
         });
     }
-
-console.log(symbols);
 
 jsonTree.create(symbols, document.querySelector('.json')).expand();

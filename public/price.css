@@ -4,6 +4,10 @@
   flex-wrap: wrap;
 }
 
+canvas {
+  margin: 0 10px;
+}
+
 .caption {
   font-size: 18px;
   font-weight: bold;
