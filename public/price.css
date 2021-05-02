@@ -1,0 +1,9 @@
+body {
+    /* background: black; */
+}
+
+.charts {
+      display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
